@@ -9,8 +9,12 @@ app.get('/a', (req, res) => {//'/'를 요청받으면
     res.send('Hello World');//'Hello World'를 응답해준다
 });
 
-const oracledb = require('oracledb');
-const dbConfig = require('./examples/dbconfig.js');
+const oracledb = require('oracledb');//oracledb 모듈 임포트
+const dbConfig = {
+  user: 'movie',
+  password: '1234',
+  connectString: 'localhost:1521/xe'
+}
 
 async function run() {
   let connection;
