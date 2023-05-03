@@ -12,7 +12,7 @@ async function query(query, params) {
       connection = await oracledb.getConnection(dbConfig);
   
       const result = await connection.execute(query, params,
-         { outFormat: oracledb.OUT_FORMAT_OBJECT });//이 부분 추가해줘야 json형태{키:값}으로 응답해줌
+         { outFormat: oracledb.OUT_FORMAT_OBJECT });//이 부분 추가해줘야 map형태{키:값}으로 응답해줌
       return result.rows;
     } catch (err) {
       throw err;
